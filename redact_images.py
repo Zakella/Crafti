@@ -8,6 +8,21 @@ dir_in = os.getcwd() + "\\images_in\\"
 dir_out = os.getcwd() + "\\images_out\\"
 files = os.listdir(dir_in)
 
+r = []
+for i in range(219, 245):
+    r.append(i)
+print(r)
+
+g = []
+for i in range(222, 245):
+    g.append(i)
+print(g)
+
+b = []
+for i in range(215, 240):
+    b.append(i)
+print(b)
+
 for im in files:
     try:
         print("Start of image processing..." + im)
@@ -16,18 +31,23 @@ for im in files:
         datas = img.getdata()
         new_image_data = []
         for item in datas:
-            if item[0] in list(range(190, 256)):
+            # print(item[0], item[1], item[2])
+            if item[0] in r and item[1] in g and item[2] in b:
                 new_image_data.append((255, 255, 255))
             else:
                 new_image_data.append(item)
-
         img.putdata(new_image_data)
         img.save(dir_out + "out_" + im)
         print("End ..." + im)
     except:
         print("fail" + im)
 
-    # img.show()
+
+        # except:
+        # print("fail" + im)
+
+
+# img.show()
 
 
 print("Finish!")
