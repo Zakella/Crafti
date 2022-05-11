@@ -9,19 +9,19 @@ dir_out = os.getcwd() + "\\images_out\\"
 files = os.listdir(dir_in)
 
 r = []
-for i in range(219, 245):
+for i in range(219, 247):
     r.append(i)
-print(r)
+
 
 g = []
-for i in range(222, 245):
+for i in range(222, 247):
     g.append(i)
-print(g)
+
 
 b = []
-for i in range(215, 240):
+for i in range(215, 247):
     b.append(i)
-print(b)
+
 
 for im in files:
     try:
